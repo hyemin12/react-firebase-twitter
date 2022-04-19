@@ -1,24 +1,27 @@
-import React, { useState } from "react";
-import { HashRouter, Route, Routes } from "react-router-dom";
-import Auth from "./routes/Auth";
-import Home from "./routes/Home";
+import React, { useEffect, useState } from "react";
+import { authService } from "fbase";
+import Routers from "components/Routers";
+import "css/app.css";
 
 function App() {
+  const [init, setInit] = useState(false);
   const [isLoggIn, setIsLoggIn] = useState(false);
+  useEffect(() => {
+    authService.onAuthStateChanged((user) => {
+      // 로그인, 계정생성 버튼을 누르거나 로그인 여부 판별
+      if (user) {
+        setIsLoggIn(true);
+      } else {
+        setIsLoggIn(false);
+      }
+      setInit(true);
+    });
+  }, []);
   return (
-    <HashRouter>
-      <Routes>
-        {isLoggIn ? (
-          <>
-            <Route exact path="/" element={<Home />}></Route>
-          </>
-        ) : (
-          <>
-            <Route exact path="/" element={<Auth />}></Route>
-          </>
-        )}
-      </Routes>
-    </HashRouter>
+    <>
+      {init ? <Routers isLoggIn={isLoggIn} /> : "Loading..."}
+      <footer>&copy; {new Date().getFullYear()} Clone Twitter</footer>
+    </>
   );
 }
 
