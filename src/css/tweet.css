@@ -1,0 +1,49 @@
+/* COMMON */
+.btn-group {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+}
+.btn-group li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+.btn-group li:hover {
+  width: 30px;
+  height: 30px;
+}
+
+/* ADD TWEET */
+.create-tweet {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+.create-tweet .submit-btn {
+  margin: 10px 0 10px 0;
+}
+
+/* TWEET */
+.tile {
+  display: flex;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+.tile .user-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #f4f4f4;
+  margin-right: 20px;
+  text-indent: -9999px;
+}
+.tile form,
+.tile h4 {
+  flex-grow: 1;
+}

@@ -5,23 +5,29 @@ import Home from "routes/Home";
 import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
 
-function Routers({ isLoggIn, userObj }) {
+function AppRouters({ isLoggIn, userObj }) {
   return (
-    <BrowserRouter>
-      {isLoggIn && <Navigation />}
-      <Routes>
-        {isLoggIn ? (
-          <>
-            <Route exact path="/" element={<Home userObj={userObj} />}></Route>
-            <Route path="/profile" element={<Profile />}></Route>
-          </>
-        ) : (
-          <>
-            <Route exact path="/" element={<Auth />}></Route>
-          </>
-        )}
-      </Routes>
-    </BrowserRouter>
+    <div className="app-wrapper">
+      <BrowserRouter>
+        {isLoggIn && <Navigation />}
+        <Routes>
+          {isLoggIn ? (
+            <>
+              <Route
+                exact
+                path="/"
+                element={<Home userObj={userObj} />}
+              ></Route>
+              <Route path="/profile" element={<Profile />}></Route>
+            </>
+          ) : (
+            <>
+              <Route exact path="/" element={<Auth />}></Route>
+            </>
+          )}
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
-export default Routers;
+export default AppRouters;

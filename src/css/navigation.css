@@ -1,0 +1,35 @@
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 0 10px;
+  border-right: 1px solid #eee;
+}
+nav li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0;
+  width: 35px;
+  height: 35px;
+  transform: scale(1.3);
+  transition: 0.3s;
+}
+nav li.logo {
+  width: 45px;
+  height: 45px;
+  padding: 10px 0 0 1px;
+  transform: scale(1);
+}
+
+nav li.nav-link:hover {
+  width: 35px;
+  height: 35px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+nav li.logo:hover {
+  width: 45px;
+  height: 45px;
+}

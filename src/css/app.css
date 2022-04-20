@@ -5,10 +5,24 @@
   color: #333;
   font-family: "Poppins", sans-serif;
 }
+li {
+  list-style: none;
+  cursor: pointer;
+}
+li:hover {
+  border-radius: 50%;
+  background-color: rgba(29, 155, 240, 0.1);
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
 input {
+  background-color: transparent;
+  padding: 10px;
+  margin: 5px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: transparent;
 }
 input:focus {
   outline: none;
@@ -24,6 +38,29 @@ input.twitter {
 }
 input.twitter:hover {
   background-color: rgb(8, 143, 233);
+}
+.submit-btn {
+  width: 100px;
+  height: 40px;
+  background-color: rgba(29, 155, 240, 0.5);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.submit-btn:hover {
+  background-color: rgba(29, 155, 240, 0.8);
+}
+.danger-btn {
+  width: 100px;
+  height: 40px;
+  background-color: rgba(232, 58, 20, 0.5);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.danger-btn:hover {
+  background-color: rgba(232, 58, 20, 0.8);
 }
 button {
   background-color: transparent;
@@ -49,7 +86,21 @@ button.twitter {
   gap: 10px;
   color: rgb(29, 155, 240);
 }
-
+#root {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+}
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 700px;
+}
+.app-wrapper > section {
+  flex-grow: 1;
+  padding: 10px 20px;
+}
 /* FontAwesomeIcon */
 .twitter-logo > path {
   fill: rgb(29, 155, 240);

@@ -1,10 +1,9 @@
-import Tweet from "components/Tweet";
 import { dbService } from "fbase";
-import { getDocs, collection, doc } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import AddTweet from "components/AddTweet";
+import Tweet from "components/Tweet";
 
 function Home({ userObj }) {
-  const [newTweet, setNewTweet] = useState();
   const [tweets, setTweets] = useState([]);
   useEffect(() => {
     // 실시간으로 처리
@@ -16,35 +15,11 @@ function Home({ userObj }) {
       setTweets(tweetArray);
     });
   }, []);
-  function onChangeTweet(event) {
-    const {
-      target: { value },
-    } = event;
-    setNewTweet(value);
-  }
-  const onSubmitTweet = async (event) => {
-    event.preventDefault();
-    await dbService.collection("tweet").add({
-      //data
-      text: newTweet,
-      createdAt: Date.now(),
-      creatorId: userObj.uid,
-    });
-    setNewTweet("");
-  };
   return (
-    <div>
-      <form onSubmit={onSubmitTweet}>
-        <input
-          type="text"
-          value={newTweet}
-          placeholder="What's Happening"
-          maxLength={120}
-          onChange={onChangeTweet}
-        />
-        <input type="submit" value="tweet" />
-      </form>
-      <div>
+    <section>
+      <h2>Home</h2>
+      <AddTweet userObj={userObj} />
+      <div className="timeline">
         {tweets.map((tweet) => (
           <Tweet
             key={tweet.id}
@@ -54,7 +29,7 @@ function Home({ userObj }) {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

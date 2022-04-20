@@ -1,5 +1,8 @@
-import { dbService } from "fbase";
 import { useState } from "react";
+import { dbService } from "fbase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrashAlt } from "@fortawesome/free-regular-svg-icons";
+import "css/tweet.css";
 
 function Tweet({ tweetObj, isOwner }) {
   const [editing, setEditing] = useState(false);
@@ -19,7 +22,7 @@ function Tweet({ tweetObj, isOwner }) {
     await dbService.doc(`tweet/${tweetObj.id}`).update({
       text: newTweet,
     });
-    setEditing(!editing);
+    setEditing(false);
   };
   function onChangeTweet(event) {
     const {
@@ -28,33 +31,53 @@ function Tweet({ tweetObj, isOwner }) {
     setNewTweet(value);
   }
   return (
-    <div>
-      {editing ? (
+    <>
+      <div className="tile">
+        <div className="user-img">
+          <img src="" alt="user" />
+        </div>
         <>
-          <form onSubmit={onSubmitTweet}>
-            <input
-              type="text"
-              value={newTweet}
-              placeholder="Edit your Tweet"
-              required
-              onChange={onChangeTweet}
-            />
-            <input type="submit" value="Update Tweet" />
-          </form>
-          <button onClick={toggleEditing}>Cancel</button>
-        </>
-      ) : (
-        <>
-          <h4>{tweetObj.text}</h4>
-          {isOwner && (
+          {editing ? (
             <>
-              <button onClick={toggleEditing}>Edit</button>
-              <button onClick={onDeleteTweet}>Delete</button>
+              <form onSubmit={onSubmitTweet}>
+                <input
+                  type="text"
+                  value={newTweet}
+                  placeholder="Edit your Tweet"
+                  required
+                  onChange={onChangeTweet}
+                />
+                <div className="btn-group">
+                  <input
+                    type="submit"
+                    value="Update Tweet"
+                    className="submit-btn"
+                    style={{ width: "130px", height: "40px" }}
+                  />
+                  <button className="danger-btn" onClick={toggleEditing}>
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </>
+          ) : (
+            <>
+              <h4>{tweetObj.text}</h4>
+              {isOwner && (
+                <ul className="btn-group">
+                  <li onClick={toggleEditing}>
+                    <FontAwesomeIcon icon={faEdit} />
+                  </li>
+                  <li onClick={onDeleteTweet}>
+                    <FontAwesomeIcon icon={faTrashAlt} />
+                  </li>
+                </ul>
+              )}
             </>
           )}
         </>
-      )}
-    </div>
+      </div>
+    </>
   );
 }
 export default Tweet;

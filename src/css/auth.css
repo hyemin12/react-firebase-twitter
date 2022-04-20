@@ -6,30 +6,24 @@
   margin: 0 auto;
   text-align: center;
 }
-.logo {
+.auth-form .logo {
   padding-top: 20px;
 }
-form {
-  display: flex;
-  flex-direction: column;
+.auth-form form {
   padding: 20px 0;
 }
-form > input {
-  padding: 10px;
-  margin: 5px 0;
-}
-.auth-btn {
+.auth-form .auth-btn {
   padding: 20px 0 30px 0;
   border-bottom: 1px solid #eee;
   color: #999;
   font-size: 14px;
   cursor: pointer;
 }
-.auth-btn .find-password-btn {
+.auth-form .auth-btn .find-password-btn {
   margin-left: 20px;
   position: relative;
 }
-.auth-btn .find-password-btn::before {
+.auth-form .auth-btn .find-password-btn::before {
   content: "";
   width: 1px;
   height: 10px;
@@ -38,11 +32,11 @@ form > input {
   top: 5px;
   left: -10px;
 }
-.btn-group > h4 {
+.auth-form .btn-group > h4 {
   padding: 8px 0;
   color: #444;
 }
-.btn-group > button {
+.auth-form .btn-group > button {
   display: flex;
   align-items: center;
   width: 100%;
@@ -50,11 +44,11 @@ form > input {
   margin: 15px 0;
   cursor: pointer;
 }
-.btn-group > button > img {
+.auth-form .btn-group > button > img {
   width: 20px;
   height: 20px;
   position: absolute;
 }
-.btn-group > button > p {
+.auth-form .btn-group > button > p {
   margin: 0 auto;
 }
