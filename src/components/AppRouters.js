@@ -5,14 +5,14 @@ import Home from "routes/Home";
 import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
 
-function Routers({ isLoggIn }) {
+function Routers({ isLoggIn, userObj }) {
   return (
     <BrowserRouter>
       {isLoggIn && <Navigation />}
       <Routes>
         {isLoggIn ? (
           <>
-            <Route exact path="/" element={<Home />}></Route>
+            <Route exact path="/" element={<Home userObj={userObj} />}></Route>
             <Route path="/profile" element={<Profile />}></Route>
           </>
         ) : (

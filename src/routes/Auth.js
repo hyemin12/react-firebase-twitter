@@ -14,6 +14,7 @@ function Auth() {
   const [password, setPassword] = useState("");
   const [newAccount, setNewAccount] = useState(true);
   const [error, setError] = useState("");
+
   function handleOnchange(event) {
     const {
       target: { name, value },
