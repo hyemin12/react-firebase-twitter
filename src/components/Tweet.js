@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { dbService } from "fbase";
+import { dbService, storageService } from "fbase";
+import { deleteObject, ref } from "firebase/storage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import "css/tweet.css";
@@ -9,9 +10,11 @@ function Tweet({ tweetObj, isOwner }) {
   const [newTweet, setNewTweet] = useState(tweetObj.text);
   const onDeleteTweet = async () => {
     const ok = window.confirm("Are you sure you want to delete this tweet");
+    const urlRef = ref(storageService, tweetObj.attachmentURL);
     if (ok) {
       //delete tweet
       await dbService.doc(`tweet/${tweetObj.id}`).delete();
+      await deleteObject(urlRef);
     }
   };
   function toggleEditing() {
@@ -30,6 +33,7 @@ function Tweet({ tweetObj, isOwner }) {
     } = event;
     setNewTweet(value);
   }
+  console.log(tweetObj.attachmentUrl);
   return (
     <>
       <div className="tile">
@@ -38,7 +42,7 @@ function Tweet({ tweetObj, isOwner }) {
         </div>
         <>
           {editing ? (
-            <>
+            <div className="tweet-item">
               <form onSubmit={onSubmitTweet}>
                 <input
                   type="text"
@@ -47,6 +51,7 @@ function Tweet({ tweetObj, isOwner }) {
                   required
                   onChange={onChangeTweet}
                 />
+
                 <div className="btn-group">
                   <input
                     type="submit"
@@ -59,10 +64,21 @@ function Tweet({ tweetObj, isOwner }) {
                   </button>
                 </div>
               </form>
-            </>
+            </div>
           ) : (
             <>
-              <h4>{tweetObj.text}</h4>
+              <div className="tweet-item">
+                <h4>{tweetObj.text}</h4>
+                <div className="upload-img">
+                  {tweetObj.attachmentUrl && (
+                    <img
+                      src={tweetObj.attachmentUrl}
+                      alt="img"
+                      style={{ width: "100%" }}
+                    />
+                  )}
+                </div>
+              </div>
               {isOwner && (
                 <ul className="btn-group">
                   <li onClick={toggleEditing}>

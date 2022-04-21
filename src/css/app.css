@@ -24,9 +24,12 @@ input {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
 input:focus {
   outline: none;
-  border: 1px solid rgb(29, 155, 240);
+}
+.border-none {
+  border: none;
 }
 input.twitter {
   background-color: rgb(29, 155, 240);
@@ -62,6 +65,21 @@ input.twitter:hover {
 .danger-btn:hover {
   background-color: rgba(232, 58, 20, 0.8);
 }
+.file-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.file-btn:hover {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(29, 155, 240, 0.1);
+  border-radius: 50%;
+}
 button {
   background-color: transparent;
   border: 1px solid #eee;
@@ -90,12 +108,12 @@ button.twitter {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
 }
 .app-wrapper {
   display: flex;
   justify-content: center;
-  width: 700px;
+  min-width: 750px;
 }
 .app-wrapper > section {
   flex-grow: 1;

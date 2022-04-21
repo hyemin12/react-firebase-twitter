@@ -2,7 +2,7 @@
 .btn-group {
   display: flex;
   justify-content: end;
-  align-items: center;
+  align-items: flex-start;
   gap: 5px;
 }
 .btn-group li {
@@ -32,18 +32,42 @@
   padding: 15px 0;
   border-bottom: 1px solid #eee;
 }
+.tile > .tweet-item {
+  display: flex;
+  flex-direction: column;
+}
+.tile > .tweet-item {
+  flex-grow: 1;
+}
 .tile .user-img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 55px;
+  min-width: 55px;
   height: 55px;
   border-radius: 50%;
   background-color: #f4f4f4;
   margin-right: 20px;
   text-indent: -9999px;
 }
-.tile form,
-.tile h4 {
-  flex-grow: 1;
+
+.preview-img {
+  width: 200px;
+  position: relative;
+}
+.preview-img img {
+  width: 100%;
+  object-fit: cover;
+}
+.preview-img .danger-btn {
+  width: 25px;
+  height: 25px;
+  border: none;
+  box-shadow: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.btn-group input[type="file"] {
+  display: none;
 }

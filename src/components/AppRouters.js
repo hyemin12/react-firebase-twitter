@@ -5,11 +5,11 @@ import Home from "routes/Home";
 import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
 
-function AppRouters({ isLoggIn, userObj }) {
+function AppRouters({ refreshUser, isLoggIn, userObj }) {
   return (
     <div className="app-wrapper">
       <BrowserRouter>
-        {isLoggIn && <Navigation />}
+        {isLoggIn && <Navigation userObj={userObj} />}
         <Routes>
           {isLoggIn ? (
             <>
@@ -18,7 +18,12 @@ function AppRouters({ isLoggIn, userObj }) {
                 path="/"
                 element={<Home userObj={userObj} />}
               ></Route>
-              <Route path="/profile" element={<Profile />}></Route>
+              <Route
+                path="/profile"
+                element={
+                  <Profile userObj={userObj} refreshUser={refreshUser} />
+                }
+              ></Route>
             </>
           ) : (
             <>

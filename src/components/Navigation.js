@@ -9,7 +9,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "css/navigation.css";
 
-function Navigation() {
+function Navigation({ userObj }) {
+  // userObj.displayName
   function handleAlert() {
     alert("준비중인 서비스입니다.");
   }

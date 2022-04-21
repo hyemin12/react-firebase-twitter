@@ -12,17 +12,37 @@ function App() {
       // 로그인, 계정생성 버튼을 누르거나 로그인 여부 판별
       if (user) {
         setIsLoggIn(true);
-        setUserObj(user);
+        setUserObj({
+          displayName: user.displayName,
+          uid: user.uid,
+          updateProfile: (arg) => {
+            user.updateProfile(arg);
+          },
+        });
       } else {
         setIsLoggIn(false);
       }
       setInit(true);
     });
   }, []);
+  function refreshUser() {
+    const user = authService.currentUser;
+    setUserObj({
+      displayName: user.displayName,
+      uid: user.uid,
+      updateProfile: (arg) => {
+        user.updateProfile(arg);
+      },
+    });
+  }
   return (
     <>
       {init ? (
-        <AppRouters isLoggIn={isLoggIn} userObj={userObj} />
+        <AppRouters
+          isLoggIn={isLoggIn}
+          userObj={userObj}
+          refreshUser={refreshUser}
+        />
       ) : (
         "Loading..."
       )}
