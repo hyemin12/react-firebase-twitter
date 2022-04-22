@@ -24,6 +24,7 @@ function Home({ userObj }) {
           <Tweet
             key={tweet.id}
             tweetObj={tweet}
+            userObj={userObj}
             // 작성자 일치여부
             isOwner={tweet.creatorId === userObj.uid}
           />

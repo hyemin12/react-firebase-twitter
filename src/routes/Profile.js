@@ -1,14 +1,15 @@
-import { authService, dbService } from "fbase";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { dbService } from "fbase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAngleLeft,
+  faBackspace,
+  faBackward,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Profile({ refreshUser, userObj }) {
-  const navigate = useNavigate();
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
-  function onLogout() {
-    authService.signOut();
-    navigate("/");
-  }
+
   const getMyTweet = async () => {
     // 해당 id 값을 가지고 있는 트윗만 필터링해서 출력
     const tweets = await dbService
@@ -36,9 +37,26 @@ function Profile({ refreshUser, userObj }) {
       refreshUser();
     }
   };
+  console.log(userObj);
   return (
     <div>
-      {userObj.displayName}
+      <div className="profile-top">
+        <ul>
+          <li>
+            <FontAwesomeIcon icon={faAngleLeft} />
+          </li>
+        </ul>
+        <h4>{userObj.displayName}</h4>
+      </div>
+      <div className="user-info-wrapper">
+        <div className="user-bg"></div>
+        <div className="user-info">
+          <div className="user-img"></div>
+          <input type="submit" value="Edit Profile" />
+          <h4>{userObj.displayName}</h4>
+          <p>{userObj.email}</p>
+        </div>
+      </div>
       <form onSubmit={onSubmitName}>
         <input
           type="text"
@@ -46,11 +64,8 @@ function Profile({ refreshUser, userObj }) {
           placeholder="Display name"
           onChange={onChangeName}
         />
-        <div className="btn-group">
-          <input type="submit" value="Update Profile" className="" />
-        </div>
+        <div className="btn-group"></div>
       </form>
-      <button onClick={onLogout}>Log Out</button>
     </div>
   );
 }

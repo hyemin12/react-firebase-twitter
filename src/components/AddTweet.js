@@ -4,7 +4,11 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faImage } from "@fortawesome/free-regular-svg-icons";
+import {
+  faChartBar,
+  faImage,
+  faSmile,
+} from "@fortawesome/free-regular-svg-icons";
 
 function AddTweet({ userObj }) {
   const [newTweet, setNewTweet] = useState();
@@ -59,6 +63,10 @@ function AddTweet({ userObj }) {
   }
   return (
     <div className="create-tweet">
+      <div className="user-img">
+        <img src={userObj.photoURL} alt={userObj.displayName} />
+      </div>
+
       <form onSubmit={onSubmitTweet}>
         <input
           type="text"
@@ -76,19 +84,26 @@ function AddTweet({ userObj }) {
             </button>
           </div>
         )}
-        <div className="btn-group">
-          <div className="file-btn-wrapper">
-            <label htmlFor="imgFile" className="file-btn">
-              <FontAwesomeIcon icon={faImage} />
-            </label>
-            <input
-              type="file"
-              id="imgFile"
-              accept="image/*"
-              onChange={onImage}
-            />
-          </div>
-
+        <div className="btn-group btn-area">
+          <ul>
+            <li className="file-btn-wrapper">
+              <label htmlFor="imgFile" className="file-btn">
+                <FontAwesomeIcon icon={faImage} />
+              </label>
+              <input
+                type="file"
+                id="imgFile"
+                accept="image/*"
+                onChange={onImage}
+              />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faChartBar} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faSmile} />
+            </li>
+          </ul>
           <input type="submit" value="tweet" className="submit-btn" />
         </div>
       </form>

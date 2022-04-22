@@ -16,39 +16,33 @@
   width: 30px;
   height: 30px;
 }
-
-/* ADD TWEET */
-.create-tweet {
-  padding: 15px 0;
-  border-bottom: 1px solid #eee;
-}
-.create-tweet .submit-btn {
-  margin: 10px 0 10px 0;
-}
-
-/* TWEET */
-.tile {
-  display: flex;
-  padding: 15px 0;
-  border-bottom: 1px solid #eee;
-}
-.tile > .tweet-item {
-  display: flex;
-  flex-direction: column;
-}
-.tile > .tweet-item {
-  flex-grow: 1;
-}
-.tile .user-img {
+.user-img {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 55px;
+  width: 55px;
   height: 55px;
   border-radius: 50%;
-  background-color: #f4f4f4;
   margin-right: 20px;
+  overflow: hidden;
   text-indent: -9999px;
+}
+.user-img img {
+  width: 55px;
+  object-fit: cover;
+}
+
+/* ADD TWEET */
+.create-tweet {
+  display: flex;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+.create-tweet form {
+  flex-grow: 1;
+}
+.create-tweet .submit-btn {
+  margin: 7px 0 7px 0;
 }
 
 .preview-img {
@@ -68,6 +62,40 @@
   top: 5px;
   right: 5px;
 }
+.btn-group.btn-area {
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-group.btn-area > ul {
+  display: flex;
+  margin-top: 9px;
+}
 .btn-group input[type="file"] {
   display: none;
+}
+
+/* TWEET */
+.tile {
+  display: flex;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+.tile > .tweet-item {
+  display: flex;
+  flex-direction: column;
+}
+.tile > .tweet-item {
+  flex-grow: 1;
+}
+.tile > div:last-child {
+  flex-grow: 1;
+}
+.tile > div:last-child .btn-group {
+  justify-content: space-between;
+  width: 90%;
+  padding-top: 10px;
+}
+.tile > div:last-child .btn-group.editing {
+  width: 100%;
+  justify-content: right;
 }

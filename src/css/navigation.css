@@ -33,3 +33,13 @@ nav li.logo:hover {
   width: 45px;
   height: 45px;
 }
+
+nav li.signOut {
+  background-color: rgba(29, 155, 240, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+}
+nav li.signOut path {
+  fill: rgb(29, 155, 240);
+}

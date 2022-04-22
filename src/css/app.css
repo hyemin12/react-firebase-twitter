@@ -84,6 +84,7 @@ button {
   background-color: transparent;
   border: 1px solid #eee;
   border-radius: 5px;
+  margin: 5px 0;
   box-shadow: 2px 2px 4px #eee;
   transition: 0.3s;
 }

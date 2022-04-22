@@ -2,10 +2,16 @@ import { useState } from "react";
 import { dbService, storageService } from "fbase";
 import { deleteObject, ref } from "firebase/storage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faTrashAlt } from "@fortawesome/free-regular-svg-icons";
+import {
+  faComment,
+  faEdit,
+  faHeart,
+  faTrashAlt,
+} from "@fortawesome/free-regular-svg-icons";
+import { faRepeat } from "@fortawesome/free-solid-svg-icons";
 import "css/tweet.css";
 
-function Tweet({ tweetObj, isOwner }) {
+function Tweet({ userObj, tweetObj, isOwner }) {
   const [editing, setEditing] = useState(false);
   const [newTweet, setNewTweet] = useState(tweetObj.text);
   const onDeleteTweet = async () => {
@@ -38,8 +44,9 @@ function Tweet({ tweetObj, isOwner }) {
     <>
       <div className="tile">
         <div className="user-img">
-          <img src="" alt="user" />
+          <img src={userObj.photoURL} alt="user" />
         </div>
+
         <>
           {editing ? (
             <div className="tweet-item">
@@ -52,7 +59,7 @@ function Tweet({ tweetObj, isOwner }) {
                   onChange={onChangeTweet}
                 />
 
-                <div className="btn-group">
+                <div className={"btn-group" + (editing ? " editing" : null)}>
                   <input
                     type="submit"
                     value="Update Tweet"
@@ -66,9 +73,10 @@ function Tweet({ tweetObj, isOwner }) {
               </form>
             </div>
           ) : (
-            <>
+            <div>
               <div className="tweet-item">
-                <h4>{tweetObj.text}</h4>
+                <h4>{userObj.displayName}</h4>
+                <p>{tweetObj.text}</p>
                 <div className="upload-img">
                   {tweetObj.attachmentUrl && (
                     <img
@@ -81,6 +89,15 @@ function Tweet({ tweetObj, isOwner }) {
               </div>
               {isOwner && (
                 <ul className="btn-group">
+                  <li>
+                    <FontAwesomeIcon icon={faComment} />
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faRepeat} />
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faHeart} />
+                  </li>
                   <li onClick={toggleEditing}>
                     <FontAwesomeIcon icon={faEdit} />
                   </li>
@@ -89,7 +106,7 @@ function Tweet({ tweetObj, isOwner }) {
                   </li>
                 </ul>
               )}
-            </>
+            </div>
           )}
         </>
       </div>
