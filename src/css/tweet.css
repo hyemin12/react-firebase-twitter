@@ -70,9 +70,6 @@
   display: flex;
   margin-top: 9px;
 }
-.btn-group input[type="file"] {
-  display: none;
-}
 
 /* TWEET */
 .tile {

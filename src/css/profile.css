@@ -1,0 +1,76 @@
+/* COMMON */
+.app-wrapper > section.profile {
+  width: 100%;
+  padding: 0;
+}
+/* PROFILE HEADER */
+.profile-nav {
+  display: flex;
+
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+}
+.user-info-wrapper .user-bg {
+  width: 100%;
+  height: 200px;
+  background-color: #888;
+}
+.user-info-wrapper .user-info {
+  width: calc(100%);
+  position: relative;
+  top: -40px;
+  left: 0;
+}
+.user-info-wrapper .row {
+  padding: 0 20px;
+}
+.user-info-wrapper .row:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-info-wrapper .row .user-img {
+  width: 120px;
+  height: 120px;
+  /* background-color: rgb(164 202 228); */
+  background-color: #eee;
+  margin-bottom: 20px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.user-info-wrapper .row button {
+  height: 40px;
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+.user-info-wrapper .row h4 {
+  font-size: 20px;
+}
+.user-info-wrapper .row p {
+  color: #999;
+  font-size: 14px;
+}
+
+/* EDIT PROFILE */
+.edit-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+.modal-wrapper {
+  width: 500px;
+}
+.modal-wrapper .user-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

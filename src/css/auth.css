@@ -32,6 +32,10 @@
   top: 5px;
   left: -10px;
 }
+.auth-form .btn-group {
+  align-items: center;
+  flex-direction: column;
+}
 .auth-form .btn-group > h4 {
   padding: 8px 0;
   color: #444;
@@ -41,7 +45,7 @@
   align-items: center;
   width: 100%;
   padding: 15px 20px;
-  margin: 15px 0;
+  margin: 10px 0;
   cursor: pointer;
 }
 .auth-form .btn-group > button > img {
