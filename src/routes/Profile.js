@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { dbService } from "fbase";
 import ProfileHeader from "components/ProfileHeader";
 import Tweet from "components/Tweet";
-import EditProfile from "./EditProfile";
+import EditProfile from "../components/EditProfile";
 import "css/profile.css";
 
 function Profile({ refreshUser, userObj }) {
@@ -16,17 +16,21 @@ function Profile({ refreshUser, userObj }) {
       // firebase는 sql을 사용하지 않아서  따로 index를 설정해줘야 필터링 할 수 있음
       .orderBy("createdAt")
       .get();
-    console.log(tweetArr.forEach((doc) => doc.data()));
     // setTweets(tweetArr.forEach((doc) => doc.data()));
   };
   useEffect(() => {
     getMyTweet();
   });
-  console.log(tweets);
   return (
     <section className="profile">
       <ProfileHeader userObj={userObj} setEditing={setEditing} />
-      {editing && <EditProfile userObj={userObj} refreshUser={refreshUser} />}
+      {editing && (
+        <EditProfile
+          userObj={userObj}
+          refreshUser={refreshUser}
+          setEditing={setEditing}
+        />
+      )}
       {/* <div className="timeline">
         {tweets.map((tweet) => (
           <Tweet

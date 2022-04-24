@@ -31,6 +31,7 @@ function AddTweet({ userObj }) {
       );
       attachmentUrl = await getDownloadURL(response.ref);
     }
+    console.log(attachmentUrl);
 
     const tweetObj = {
       text: newTweet,

@@ -2,10 +2,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
 function ProfileHeader({ userObj, setEditing }) {
-  console.log(userObj);
   function editToggle() {
     setEditing(true);
   }
+  console.log(userObj.photoURL);
   return (
     <>
       <div className="profile-header">
