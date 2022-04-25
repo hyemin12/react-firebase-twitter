@@ -4,6 +4,7 @@ import { authService } from "fbase";
 function AuthForm({ setNewAccount, newAccount }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState("");
   const [error, setError] = useState("");
 
   function handleOnchange(event) {
@@ -14,6 +15,8 @@ function AuthForm({ setNewAccount, newAccount }) {
       setEmail(value);
     } else if (name === "password") {
       setPassword(value);
+    } else if (name === "userName") {
+      setUserName(value);
     }
   }
   const submitLogin = async (event) => {
@@ -39,6 +42,16 @@ function AuthForm({ setNewAccount, newAccount }) {
   }
   return (
     <form onSubmit={submitLogin}>
+      {newAccount && (
+        <input
+          name="userName"
+          type="text"
+          placeholder="User Name"
+          required
+          value={userName}
+          onChange={handleOnchange}
+        />
+      )}
       <input
         name="email"
         type="email"

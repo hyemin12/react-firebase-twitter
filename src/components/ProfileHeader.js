@@ -5,7 +5,6 @@ function ProfileHeader({ userObj, setEditing }) {
   function editToggle() {
     setEditing(true);
   }
-  console.log(userObj.photoURL);
   return (
     <>
       <div className="profile-header">

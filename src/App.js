@@ -13,7 +13,7 @@ function App() {
       if (user) {
         setIsLoggIn(true);
         setUserObj({
-          displayName: user.displayName,
+          displayName: user.displayName ?? "User Name",
           photoURL:
             user.photoURL ??
             "https://cdn-icons-png.flaticon.com/512/1077/1077012.png",

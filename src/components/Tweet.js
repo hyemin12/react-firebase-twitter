@@ -39,12 +39,11 @@ function Tweet({ userObj, tweetObj, isOwner }) {
     } = event;
     setNewTweet(value);
   }
-  console.log(tweetObj.attachmentUrl);
   return (
     <>
       <div className="tile">
         <div className="user-img">
-          <img src={userObj.photoURL} alt="user" />
+          <img src={tweetObj.photoURL} alt="user" />
         </div>
 
         <>
@@ -75,7 +74,10 @@ function Tweet({ userObj, tweetObj, isOwner }) {
           ) : (
             <div>
               <div className="tweet-item">
-                <h4>{userObj.displayName}</h4>
+                <h4>
+                  {tweetObj.displayName}
+                  <span className="tweet-user-id">@{tweetObj.creatorId}</span>
+                </h4>
                 <p>{tweetObj.text}</p>
                 <div className="upload-img">
                   {tweetObj.attachmentUrl && (
@@ -87,25 +89,28 @@ function Tweet({ userObj, tweetObj, isOwner }) {
                   )}
                 </div>
               </div>
-              {isOwner && (
-                <ul className="btn-group">
-                  <li>
-                    <FontAwesomeIcon icon={faComment} />
-                  </li>
-                  <li>
-                    <FontAwesomeIcon icon={faRepeat} />
-                  </li>
-                  <li>
-                    <FontAwesomeIcon icon={faHeart} />
-                  </li>
-                  <li onClick={toggleEditing}>
-                    <FontAwesomeIcon icon={faEdit} />
-                  </li>
-                  <li onClick={onDeleteTweet}>
-                    <FontAwesomeIcon icon={faTrashAlt} />
-                  </li>
-                </ul>
-              )}
+
+              <ul className="btn-group">
+                <li>
+                  <FontAwesomeIcon icon={faComment} />
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faRepeat} />
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faHeart} />
+                </li>
+                {isOwner && (
+                  <>
+                    <li onClick={toggleEditing}>
+                      <FontAwesomeIcon icon={faEdit} />
+                    </li>
+                    <li onClick={onDeleteTweet}>
+                      <FontAwesomeIcon icon={faTrashAlt} />
+                    </li>
+                  </>
+                )}
+              </ul>
             </div>
           )}
         </>

@@ -31,12 +31,12 @@ function AddTweet({ userObj }) {
       );
       attachmentUrl = await getDownloadURL(response.ref);
     }
-    console.log(attachmentUrl);
-
     const tweetObj = {
       text: newTweet,
       createdAt: Date.now(),
       creatorId: userObj.uid,
+      displayName: userObj.displayName,
+      photoURL: userObj.photoURL,
       attachmentUrl,
     };
     await dbService.collection("tweet").add(tweetObj);
