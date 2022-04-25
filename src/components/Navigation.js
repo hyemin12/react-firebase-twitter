@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { authService } from "fbase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEllipsis,
@@ -8,16 +9,14 @@ import {
   faSignOut,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import { authService } from "fbase";
-import { useNavigate } from "react-router-dom";
 import "css/navigation.css";
 
-function Navigation({ userObj }) {
-  // userObj.displayName
+function Navigation({ refreshUser }) {
   const navigate = useNavigate();
   function onLogout() {
     authService.signOut();
     navigate("/");
+    refreshUser();
   }
   function handleAlert() {
     alert("준비중인 서비스입니다.");
