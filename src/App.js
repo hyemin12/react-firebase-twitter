@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { authService } from "fbase";
-import AppRouters from "components/AppRouters";
+import Router from "components/Routers";
 import "css/app.css";
 
 function App() {
@@ -40,20 +40,15 @@ function App() {
   }
   return (
     <>
-      <AppRouters
-        isLoggIn={isLoggIn}
-        userObj={userObj}
-        refreshUser={refreshUser}
-      />
-      {/* {init ? (
-        <AppRouters
+      {init ? (
+        <Router
           isLoggIn={isLoggIn}
           userObj={userObj}
           refreshUser={refreshUser}
         />
       ) : (
         "Loading..."
-      )} */}
+      )}
       {/* <footer>&copy; {new Date().getFullYear()} Clone Twitter</footer> */}
     </>
   );
