@@ -40,7 +40,12 @@ function App() {
   }
   return (
     <>
-      {init ? (
+      <AppRouters
+        isLoggIn={isLoggIn}
+        userObj={userObj}
+        refreshUser={refreshUser}
+      />
+      {/* {init ? (
         <AppRouters
           isLoggIn={isLoggIn}
           userObj={userObj}
@@ -48,7 +53,7 @@ function App() {
         />
       ) : (
         "Loading..."
-      )}
+      )} */}
       {/* <footer>&copy; {new Date().getFullYear()} Clone Twitter</footer> */}
     </>
   );

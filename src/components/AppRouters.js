@@ -8,7 +8,7 @@ import Navigation from "components/Navigation";
 function AppRouters({ refreshUser, isLoggIn, userObj }) {
   return (
     <div className="app-wrapper">
-      <HashRouter base="/">
+      <HashRouter>
         {isLoggIn && <Navigation userObj={userObj} refreshUser={refreshUser} />}
         <Routes>
           {isLoggIn ? (
