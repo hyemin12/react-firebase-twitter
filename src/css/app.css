@@ -114,10 +114,15 @@ button:hover {
 }
 .app-wrapper {
   display: flex;
+  justify-content: start;
+  width: 100%;
+}
+.app-wrapper.isPc {
   justify-content: center;
   min-width: 750px;
 }
 .app-wrapper > section {
+  width: calc(100% - 66px);
   flex-grow: 1;
   padding: 10px 20px;
 }
