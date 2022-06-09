@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "https://hyemin12.github.io/react-firebase-twitter/static/css/main.7d019a39.css",
-    "main.js": "https://hyemin12.github.io/react-firebase-twitter/static/js/main.c0c65c09.js",
+    "main.js": "https://hyemin12.github.io/react-firebase-twitter/static/js/main.cfaead9c.js",
     "index.html": "https://hyemin12.github.io/react-firebase-twitter/index.html",
     "main.7d019a39.css.map": "https://hyemin12.github.io/react-firebase-twitter/static/css/main.7d019a39.css.map",
-    "main.c0c65c09.js.map": "https://hyemin12.github.io/react-firebase-twitter/static/js/main.c0c65c09.js.map"
+    "main.cfaead9c.js.map": "https://hyemin12.github.io/react-firebase-twitter/static/js/main.cfaead9c.js.map"
   },
   "entrypoints": [
     "static/css/main.7d019a39.css",
-    "static/js/main.c0c65c09.js"
+    "static/js/main.cfaead9c.js"
   ]
 }
