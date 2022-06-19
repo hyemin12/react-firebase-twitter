@@ -40,6 +40,9 @@ function AuthForm({ setNewAccount, newAccount }) {
   function toggleAccount() {
     setNewAccount(!newAccount);
   }
+  function handleAlert() {
+    alert("준비중인 서비스입니다.");
+  }
   return (
     <form onSubmit={submitLogin}>
       {newAccount && (
@@ -78,7 +81,9 @@ function AuthForm({ setNewAccount, newAccount }) {
         <span onClick={toggleAccount}>
           {newAccount ? "Log In" : "Create Account"}
         </span>
-        <span className="find-password-btn">Find Password</span>
+        <span className="find-password-btn" onClick={handleAlert}>
+          Find Password
+        </span>
       </div>
     </form>
   );

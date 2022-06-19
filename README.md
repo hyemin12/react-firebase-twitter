@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# twitter clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<a href="#" target="_blank"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FZhFQN%2FbtrEZedyP5T%2F9ANH2jcfgq4kdbXA98FKQK%2Fimg.png" /></a>
 
-## Available Scripts
+이미지를 클릭하면 사이트로 이동합니다.
 
-In the project directory, you can run:
+<br>
+<hr>
+<br>
 
-### `npm start`
+노마드코더의 트위터 클론코딩 강의를 수강하며 제작한 프로젝트. firebase와 react를 사용하여 제작하였다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://nomadcoders.co/nwitter/lobby
+https://console.firebase.google.com/u/0/?hl=ko
+<br>
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<hr>
+<br>
 
-### `npm test`
+## 기능
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. 회원가입 / 로그인 / 로그아웃 (구글 및 깃허브 연동)
+2. 새로운 트윗 작성 기능, 사진 첨부 가능
+3. 작성된 트윗 확인 및 수정 삭제 기능
 
-### `npm run build`
+## 페이지 구성
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. 회원가입
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="./readmeImg/회원가입.jpg" width="200px" />
 
-### `npm run eject`
+1.유저 이름, 이메일, 비밀번호를 입력하여 가입할 수 있음.<br> 2.소셜 (구글, 깃허브)와 연동하여 회원 가입 가능
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<br>
+<hr>
+<br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. 홈
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+네비게이션, 새로운 트윗작성 섹션, 작성된 트윗 목록(타임라인)으로 구성<br>
+왼쪽 하단 버튼을 클릭하면 로그아웃 됨
+<br>
+<br>
+<img src="./readmeImg/홈.jpg" width="300px" />
+<br>
+<br> 1)새로운 트윗 작성
+<br>
+<img src="./readmeImg/트윗작성.jpg" width="300px" />
+텍스트와 사진 첨부하여 새로운 트윗 작성 가능
+<br>
+<br>
 
-## Learn More
+2)타임라인(트위터 목록확인)
+<br>
+<img src="./readmeImg/타임라인.jpg" width="300px" /> -작성된 트윗 목록을 확인할 수 있으며,
+작성한 트윗 내용을 수정, 삭제할 수 있음
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-작성자 일치 여부를 확인하고, 일치할 경우 수정 삭제 버튼이 추가로 나타남
+<img src="./readmeImg/수정삭제.jpg" width="300px" /> -수정 화면
+<img src="./readmeImg/수정.jpg" width="300px" />
+<br>
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3. 마이페이지
 
-### Code Splitting
+유저가 작성한 트윗들을 모아볼 수 있으며, 프로필을 수정할 수 있음<br>
+이외의 기능들은 서비스 준비중
+<br>
+<br>
+<img src="./readmeImg/마이페이지.jpg" width="300px" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1)프로필 수정
+<br>
+<img src="./readmeImg/프로필수정.jpg" width="300px" /> -유저의 프로필 이미지, 백그라운드, 유저 네임 수정 가능
