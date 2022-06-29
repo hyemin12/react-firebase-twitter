@@ -30,7 +30,7 @@ https://console.firebase.google.com/u/0/?hl=ko
 
 <br>
 
-<img src="./readmeImg/회원가입.jpg" width="200px" />
+<img src="https://github.com/hyemin12/react-firebase-twitter/blob/master/readmeImg/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.JPG?raw=true" width="200px" />
 
 1.유저 이름, 이메일, 비밀번호를 입력하여 가입할 수 있음.<br> 2.소셜 (구글, 깃허브)와 연동하여 회원 가입 가능
 
@@ -46,11 +46,11 @@ https://console.firebase.google.com/u/0/?hl=ko
 왼쪽 하단 버튼을 클릭하면 로그아웃 됨
 <br>
 <br>
-<img src="./readmeImg/홈.jpg" width="300px" />
+<img src="https://github.com/hyemin12/react-firebase-twitter/blob/master/readmeImg/%ED%99%88.JPG?raw=true" width="300px" />
 <br>
 <br> 1)새로운 트윗 작성
 <br>
-<img src="./readmeImg/트윗작성.jpg" width="300px" />
+<img src="https://github.com/hyemin12/react-firebase-twitter/blob/master/readmeImg/%ED%8A%B8%EC%9C%97%EC%9E%91%EC%84%B1.JPG?raw=true" width="300px" />
 텍스트와 사진 첨부하여 새로운 트윗 작성 가능
 <br>
 <br>
@@ -61,8 +61,8 @@ https://console.firebase.google.com/u/0/?hl=ko
 작성한 트윗 내용을 수정, 삭제할 수 있음
 
 -작성자 일치 여부를 확인하고, 일치할 경우 수정 삭제 버튼이 추가로 나타남
-<img src="./readmeImg/수정삭제.jpg" width="300px" /> -수정 화면
-<img src="./readmeImg/수정.jpg" width="300px" />
+<img src="https://github.com/hyemin12/react-firebase-twitter/blob/master/readmeImg/%EC%88%98%EC%A0%95%EC%82%AD%EC%A0%9C.JPG?raw=true" width="300px" /> -수정 화면
+<img src="https://github.com/hyemin12/react-firebase-twitter/blob/master/readmeImg/%EC%88%98%EC%A0%95.JPG?raw=true" width="300px" />
 <br>
 <br>
 
@@ -72,8 +72,8 @@ https://console.firebase.google.com/u/0/?hl=ko
 이외의 기능들은 서비스 준비중
 <br>
 <br>
-<img src="./readmeImg/마이페이지.jpg" width="300px" />
+<img src="https://github.com/hyemin12/react-firebase-twitter/blob/master/readmeImg/%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.JPG?raw=true" width="300px" />
 
 1)프로필 수정
 <br>
-<img src="./readmeImg/프로필수정.jpg" width="300px" /> -유저의 프로필 이미지, 백그라운드, 유저 네임 수정 가능
+<img src="https://github.com/hyemin12/react-firebase-twitter/blob/master/readmeImg/%ED%94%84%EB%A1%9C%ED%95%84%EC%88%98%EC%A0%95.JPG?raw=true" width="300px" /> -유저의 프로필 이미지, 백그라운드, 유저 네임 수정 가능
